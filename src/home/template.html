@@ -1,1 +1,105 @@
-<h1>Hello this is {{ name }}</h1>
+<ul class="activity-list">
+  {{#each data}}
+  <li class="item">
+    <div class="active-item">
+      <div class="image-outer">
+        <img src="{{filename}}" alt="" class="band">
+      </div>
+      <div class="info">
+        <div class="title-1">{{ title }}</div>
+        <div class="sub-info">
+          <i class="fa fa-user-o"></i>
+          <span class="count">{{ usercnt }}</span>
+        </div>
+        <div class="sub-info">
+          <i class="fa fa-clock-o"></i>
+          <span class="count">{{ lastupdate }}</span>
+        </div>
+        <div class="sub-info">
+          <i class="fa fa-map-marker"></i>
+          <span class="address">{{ clubname }}</span>
+        </div>
+      </div>
+    </div>
+  </li>
+  {{/each}}
+</ul>
+
+<style>
+
+  .activity-list {
+    padding: 0px;
+    margin: 0px;
+  }
+
+  .activity-list .item {
+    padding: 0px;
+    list-style: none;
+    margin: 1rem;
+  }
+
+  .activity-list .item .active-item {
+    height: 120px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: flex;
+    background: #fff;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  .activity-list .item .active-item .image-outer{
+    position: relative;
+    width: 120px;
+    height: 120px;
+  }
+
+  .activity-list .item .active-item img.band {
+    max-width:120px;
+    max-height:120px;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    margin:auto;
+  }
+
+  .activity-list .item .active-item .info {
+    padding: 0.5rem 1rem;
+    flex: 1;
+  }
+
+  .activity-list .item .active-item .info .title-1 {
+    font-size: 1rem;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 200px;
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .activity-list .item .active-item .info .title-2 {
+    font-size: 1rem;
+  }
+
+  .activity-list .item .active-item .info .sub-info {
+    color: #444;
+  }
+
+  .activity-list .item .active-item .info .sub-info i {
+    margin-right: 0.25rem;
+  }
+
+  .activity-list .item .active-item .info .sub-info span {
+    font-size: 0.75rem;
+  }
+
+  .activity-list .item .active-item .info .sub-info span.address {
+    text-overflow: ellipsis;
+    display: inline-block;
+    overflow: hidden;
+    width: 180px;
+    white-space: nowrap;
+  }
+</style>
+

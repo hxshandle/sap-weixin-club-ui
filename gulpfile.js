@@ -19,5 +19,12 @@ gulp.task('copy-template', function () {
     .pipe(gulp.dest('build/html'))
 })
 
+gulp.task('copy-data', function () {
+  return watch('origin/**/data.js', {
+      ignoreInitial: false
+    })
+    .pipe(gulp.dest('build/html'))
+})
 
-gulp.task('default', ['html', 'copy-template'])
+
+gulp.task('default', ['html', 'copy-template', 'copy-data'])
