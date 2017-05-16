@@ -1,0 +1,68 @@
+<header style="background:#86B817">
+        <div class="media">
+            <div class="media-left media-middle">
+                <img class="media-object" src="${data[0].filename}" />
+            </div>
+            <div class="media-body">
+		<input type=hidden id="cid" name="cid" value="${data[0].id}" />
+                <h2 class="media-heading">${data[0].title}</h2>
+                <div class="owner">
+                    <span><img src="${data[0].avatar}"><span class="name">${data[0].nickname}</span></span>
+                </div>
+            </div>
+            <div class="act-details">
+                      <div>
+				<label>状态:</label>
+				<span>${data[0].status} </span>
+			</div>
+                      <div>
+				<label>成员人数:</label>
+				<span>${data[0].usercnt} </span>
+			</div>
+                     <div>
+				<label>我的等级:</label>
+				<span>${data[0].grade}级 ${data[0].gradename}</span>
+  		</div>
+         <div>
+				<label>我的积分:</label>
+				<span>${data[0].score} </span>
+			</div>
+
+            </div>
+            <div class="dropup">
+      				<button class="btn dropdown-toggle center-block" type="button" data-toggle="dropdown">
+      					请选择操作
+            			<span class="caret"></span>
+            		</button>
+        			<ul class="dropdown-menu" id="tagme"></ul>
+    			</div>
+             <br />
+       </div>
+    </header>
+  <section>
+      <div>
+	    <ul class="nav nav-tabs nav-pills" role="tablist" id="tablist">
+		<li role="presentation" idx="0"><a href="#clubdetail-${data[0].id}-0" role="tab">介绍</a></li>
+		<li role="presentation" idx="1"><a href="#clubdetail-${data[0].id}-1" role="tab">成员</a></li>
+		<li role="presentation" idx="2"><a href="#clubdetail-${data[0].id}-2" role="tab">活动</a></li>
+		<li role="presentation" idx="3"><a href="#clubdetail-${data[0].id}-3" role="tab">讨论</a></li>
+		<li role="presentation" idx="4"><a href="#clubdetail-${data[0].id}-4" role="tab">规则</a></li>
+		</ul>
+		<div class="tab-content">
+		<div role="tabpanel" class="tab-pane" id="clubdetail-${data[0].id}-0"><p>${data[0].summary}</p> </div>
+		<div role="tabpanel" class="tab-pane" id="clubdetail-${data[0].id}-1"></div>
+		<div role="tabpanel" class="tab-pane" id="clubdetail-${data[0].id}-2"><button type="button" class="btn btn-default" id="new-session-btn" onclick="location.hash='#addact-${data[0].id}';">
+                            <span class="glyphicon glyphicon-list-alt"></span> 新建活动  </button>
+                   <div id="slist"></div>
+		</div>
+		<div role="tabpanel" class="tab-pane" id="clubdetail-${data[0].id}-3"></div>
+		<div role="tabpanel" class="tab-pane" id="clubdetail-${data[0].id}-4"></div>
+	  </div>
+    </div>
+  </section>
+<div style="min-height:100px;height:100px"></div>
+<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group" style="position:fixed;left:0px; bottom:0px;height:30px; width:100%;">
+  <a href="#home-0" class="btn btn-default" role="button">我的主页</a> 
+  <a href="#acts-0" class="btn btn-default" role="button">活动</a> 
+  <a href="#club-0" class="btn btn-default btn-primary" role="button">俱乐部</a>
+</div>

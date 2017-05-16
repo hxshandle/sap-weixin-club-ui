@@ -1,0 +1,69 @@
+<div style="position:relative">
+  <div style="position:relative"> <img src="http://bennyhuang.github.io/sapclubs/bootstrap/images/home.jpg" style="width:100%">
+                <div style="position:absolute;z-index:200;left:150px;top:0;font-weight:bold">
+                    <div style="font-size:2em; margin-top:2em">WE CONNECT</div>
+                    <p style="padding-left:30px">Focus not only on Health</p>
+                </div>
+                <div class="input-group" style="margin: 0 2em;position:absolute;bottom:20px;">
+                    <input type="text" class="form-control"> <span class="input-group-btn">                 <button class="btn btn-default glyphicon glyphicon-search" type="button"></button>             </span> </div>
+            </div>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" style="margin:2em 0">
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active"> <img src="http://bennyhuang.github.io/sapclubs/bootstrap/images/activity1.jpg">
+                        <div class="carousel-caption"> </div>
+                    </div>
+                    <div class="item"> <img src="http://bennyhuang.github.io/sapclubs/bootstrap/images/activity2.jpg">
+                        <div class="carousel-caption"> </div>
+                    </div>
+                </div>
+            </div>  
+  <ul class="media-list list-group">
+ {%each(i,obj) data%} {%if (obj.etype == "1" || obj.etype == "3") %}
+    <li class="media list-group-item activiy">
+      <div class="media-left media-middle" style="width:25%"><span>
+                   <img class="media-object" src="${obj.filename}" style="max-width:100%" /> </span>
+    		</div>
+      <div class="media-body" style="text-align:left">
+      			<span><a href="#actdetail-${obj.usercnt}-0"><h4 class="media-heading">${obj.etype == "3" ? "场次邀请" : "活动邀请"}: ${obj.title}</h4></a></span>
+      			<div>${obj.nickname} 邀约您参与俱乐部[ <a href="#clubdetail-${obj.clubid}-0">${obj.clubname}</a> ]${obj.etype == "3" ? "场次" :"活动"}, [ <a href="#home-0-echo-${obj.etype == "3" ? "2":"0"},${obj.id},${obj.usercnt},${obj.owner},${obj.clubid}">接受</a> ]还是[ <a href="#home-0-echo-1,${obj.id},${obj.usercnt},${obj.owner},${obj.clubid}">拒绝</a> ]?</div>
+      			<div>对方写道: ${obj.location} -- ${obj.lastupdate}</div>
+    		</div>
+  		</li>{%/if%}
+    {%/each%}
+{%each(i,obj) data%} {%if (obj.etype == "2" || obj.etype == "4") %}
+    <li class="media list-group-item activiy">
+      <div class="media-left media-middle" style="width:25%"><span>
+                   <img class="media-object" src="${obj.filename}" style="max-width:100%" /> </span>
+    		</div>
+      <div class="media-body" style="text-align:left">
+      			<span><a href="#actdetail-${obj.usercnt}-0"><h4 class="media-heading">${obj.etype == "4" ? "场次邀请" : "活动邀请"}: ${obj.title}</h4></a></span>
+      			<div>您邀约了 ${obj.nickname}参与俱乐部[ <a href="#clubdetail-${obj.clubid}-0">${obj.clubname}</a> ], [ <a href="#home-0-echo-100,${obj.id},${obj.usercnt},${obj.owner}">取消</a> ]?</div>
+      			<div>您写道: ${obj.location} -- ${obj.lastupdate}</div>
+    		</div>
+  		</li>{%/if%}
+    {%/each%}
+    {%each(i,obj) data%} {%if (obj.etype == "0") %}
+    <li class="media list-group-item activiy">
+      <div class="media-left media-middle" style="width:25%">
+        		 <span><a href="#sessdetail-${obj.id}-0">
+                   <img class="media-object" src="${obj.filename}" style="max-width:100%" /></a></span>
+    		</div>
+      <div class="media-body" style="text-align:left">
+      			<span><a href="#sessdetail-${obj.id}-0"><h4 class="media-heading">活动: ${obj.title}</h4></a></span>
+      			<div>俱乐部: <a href="#clubdetail-${obj.clubid}-0">${obj.clubname}</a>
+ </div>
+      			<div>${obj.usercnt} 人参与, 地点${obj.location}, ${obj.lastupdate} 更新</div>
+    		</div>
+  		</li>{%/if%}
+    {%/each%}
+  </ul>
+<div style="min-height:100px;height:100px"></div>
+<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group" style="position:fixed;left:0px; bottom:0px;height:30px; width:100%;">
+  <a href="#home-0" class="btn btn-default btn-primary" role="button">我的主页</a> 
+  <a href="#acts-0" class="btn btn-default" role="button">活动</a> 
+  <a href="#club-0" class="btn btn-default" role="button">俱乐部</a>
+</div>

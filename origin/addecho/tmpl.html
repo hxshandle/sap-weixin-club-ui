@@ -1,0 +1,35 @@
+<h2>${title}</h2>
+<form style="margin: 1em 0">
+	<div class="form-group">
+		<label for="title">${hint}:</label>${summary}</div>
+        {%if (haseval) %}
+        <div class="form-group">
+		<label for="eval">${hint3}:</label> {%if (data[0].clubid=="11") %}
+<select id="eval" name="eval" class="form-control">
+<option value="0">Best Role Taker (#1)</option>
+<option value="1">Best Role Taker (#2)</option>
+<option value="2">Best Role Taker (#3)</option>
+<option value="3">Best Table Topic Speaker (#1)</option>
+<option value="4">Best Table Topic Speaker (#2)</option>
+<option value="5">Best Table Topic Speaker (#3)</option>
+<option value="6">Best Evaluator (#1)</option>
+<option value="7">Best Evaluator (#2)</option>
+<option value="8">Best Evaluator (#3)</option>
+</select>
+{%else%}<input type=text class="form-control" name="eval" id="eval" value=0 />{%/if%}
+</div>{%/if%}
+	<div class="form-group">
+		<label for="echo">${hint2}</label>
+		<textarea class="form-control" cols="30" rows="2" name="echo" id="echo">${content}</textarea>
+	</div>
+	<input type=hidden name="aid" id="aid" value="${data[0].id}" />
+	<input type=hidden name="cid" id="aid" value="${data[0].clubid}" />
+	<input type=hidden name="eflag" id="eflag" value="${type}" />
+</form>
+<div id="clist">
+</div>
+<div style="height:100px;min-height:100px"></div>
+<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group" style="position:fixed;left:0px; bottom:0px;height:30px; width:100%;z-index:10;">
+	<a class="btn btn-default" href="javascript:history.back();" role="button"> 
+返回 </a>
+</div>

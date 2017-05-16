@@ -1,0 +1,41 @@
+{%if (approvecmd) %}
+<div>
+	<span>申请人员 (待批准, 共计${usercnt}人)</span>
+	<div class="approve_links">
+		<a class="" href="javascript:void(0);" onclick="c(this,'${approvecmd}',-1);">全部批准</a>
+		 | 
+		<a class="" href="javascript:void(0);" onclick="c(this,'${declinecmd}',-1);">全部拒绝</a>
+	</div>
+</div>
+<div class="row">
+    {%each(i,obj) data%}
+	{%if ((parseInt(obj.flag) & 1) == 0)%}
+	<div class="dropdown col-xs-3 member">
+		<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+			<img src="${obj.avatar}"><div>${obj.nickname}</div></button>
+		<ul class="dropdown-menu">
+			<li><a href="javascript:void(0);" onclick="c(this,'${approvecmd}',${obj.id});">批准</a></li>
+			| <li><a href="javascript:void(0);" onclick="c(this,'${declinecmd}',${obj.id});">拒绝</a></li>
+		</ul>
+	</div>{%/if%} {%/each%}
+</div>
+<br />
+<div>
+	<span>已批准人员 (共计${approvecmd ? data.length  - usercnt : data.length}人)</span>
+	<div class="approve_links">
+		<a class="" href="javascript:void(0);" onclick="c(this,'${removecmd}',-1);">全部删除</a>
+	</div>
+</div>
+{%/if%}
+<div class="row">
+    {%each(i,obj) data%}
+	{%if (!(approvecmd && (parseInt(obj.flag) & 1) == 0))%}
+	<div class="dropdown col-xs-3 member">
+		<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">
+			<img src="${obj.avatar}"><div>${obj.nickname}</div>
+		</button>
+		<ul class="dropdown-menu">
+			<li><a href="javascript:void(0);" onclick="c(this,'${removecmd}',${obj.id});">${removecmdname || "删除"}</a></li>
+		</ul>
+	</div> {%/if%} {%/each%}
+</div>

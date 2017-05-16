@@ -1,0 +1,1 @@
+var fill = {"data":[],"headers":["id","starttime","owner","flag","location","usercnt","title","avatar","NickName"],"udata":{"id":"6","_all":["6"],"_opt":{"command":"loadsessions","skipData":null,"dataSpec":null,"inputFields":null}},"option":{"command":"loadsessions","skipData":null,"dataSpec":null,"inputFields":null},"uo":null,"tiletid":"sessdetail","id":"slist"};

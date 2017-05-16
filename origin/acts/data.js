@@ -1,0 +1,1 @@
+var fill = {"data":[],"headers":["etype","id","usercnt","lastupdate","location","owner","nickname","title","clubid","ClubName","filename","fflag"],"udata":{"_all":[],"_opt":{"skipData":null,"dataSpec":null,"inputFields":null}},"option":{"skipData":null,"dataSpec":null,"inputFields":null},"id":"cont"};

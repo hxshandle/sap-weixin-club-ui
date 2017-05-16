@@ -1,0 +1,47 @@
+<div id="comments-view">
+        <input type=hidden name="pos" id="pos"  value="${udata.start}" />
+	<button type="button" class="btn btn-default" id="new-comment-btn" onclick="c(this,'prepare',0);">
+		<span class="glyphicon glyphicon-pencil"></span> 新的发言
+	</button>
+	<div class="comment-list">
+        <div class="paginationer"></div>
+	{%each(i,obj) data%}
+              {%if (i < 20) %}
+		<div class="comment-item">
+			<div class="orignial comment">
+				<div>
+					<img src="${obj.avatar}" />
+					<span>${obj.nickname}</span>
+					<span>@ ${obj.createdate}</span>
+					<span type="button" onclick="c(this,'prepare',${obj.id});" class="reply-btn glyphicon glyphicon-comment pull-right"></span>
+				</div>
+				<div class="well well-sm">{%html obj.summary%}</div>
+			</div>
+			{%each(i,obj2) obj.children%}
+			<div class="reply comment">
+				<div><img src="${obj2.avatar}"><span>${obj2.nickname}</span><span>@ ${obj2.createdate}</span></div>
+				<div class="well well-sm">{%html obj2.summary%}</div>
+			</div>
+			{%/each%}
+		</div>
+                 {%/if%}
+	{%/each%}
+ <div class="paginationer"></div>
+	</div>                        
+</div>
+
+<div id="comment-form" style="display:none">
+    <div id="upho"></div>
+<form action="./base.aspx?a=upload&code=${id}" method="post" 
+   data-ajax="false" enctype="multipart/form-data" target="fup" id="myform">
+	<div class="form-group">
+		<input class="form-control" type="file" id="logo" name="logo" accept="image/*" capture="camera"  />
+		<input type=submit name="bb" class="ui-btn" value="Upload Photo" />
+	</div>
+</form><iframe style="display:none" name="fup" id="fup"></iframe>
+       <input type=hidden value="" name="phoid" id="phoid" />
+	<textarea class="form-control" rows="3" id="cmtcont" name="cmtcont"></textarea>
+    <input type=hidden id="cmtparent" name="cmtparent" value=0 />
+	<button id="post-btn" type="submit" class="btn btn-primary pull-right" onclick="c(this,'addcmt');">发表</button>
+	<button id="post-btn" type="button" class="btn pull-right" onclick="c(this,'prepare',-1);">取消</button>
+</div>

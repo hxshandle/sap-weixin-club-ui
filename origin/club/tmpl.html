@@ -1,0 +1,23 @@
+<a type="button" class="btn btn-default btn-lg container-fluid" style="width:100%;margin-bottom:10px" href="#addclub-0">
+		<span class="glyphicon glyphicon-plus pull-left"></span> 创建我的俱乐部 </a>
+<ul class="media-list list-group">
+    {%each(i,obj) data%}
+    <li class="media list-group-item activiy" style="padding:0px;border:none;margin-top:0px">
+      <div class="media-left media-middle" style="width:25%">
+        		 <span><a href="#clubdetail-${obj.id}-0">
+                   <img class="media-object" src="${obj.filename}" style="max-width: 100%;" /></a></span>
+    		</div>
+      <div class="media-body"  style="vertical-align: middle;text-align:left">
+      			<span><a href="#clubdetail-${obj.id}-0"><h4 class="media-heading">${obj.title}</h4></a></span>
+      			<div>${obj.usercnt} 成员 ${(parseInt(obj.flag) & 1) == 0 ? " (等待批准)" : ""}</div>
+      			<div>${obj.summary}</div>
+    		</div>
+  		</li>
+    {%/each%}
+  </ul>
+<div style="min-height:100px;height:100px"></div>
+<div class="btn-group btn-group-justified" role="group" aria-label="Justified button group" style="position:fixed;left:0px; bottom:0px;height:30px; width:100%;">
+  <a href="#home-0" class="btn btn-default" role="button">我的主页</a> 
+  <a href="#acts-0" class="btn btn-default" role="button">活动</a> 
+  <a href="#club-0" class="btn btn-default btn-primary" role="button">俱乐部</a>
+</div>

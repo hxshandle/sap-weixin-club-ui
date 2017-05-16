@@ -1,0 +1,40 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no')
+    //- link(rel='stylesheet', href='http://bizof.me/3rd/css/bootstrap.min.css')
+    //- link(rel='stylesheet', href='http://bizof.me/3rd/css/bootstrap-datepicker3.min.css')
+    //- link(rel='stylesheet', href='http://bizof.me/3rd/css/bootstrap-multiselect.css')
+    //- link(rel='stylesheet', href='http://bizof.me/3rd/css/bootstrap-switch.min.css')
+    //- link(rel='stylesheet', href='http://bizof.me/3rd/css/app.css')
+    link(rel='stylesheet', href='https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css')
+    //- script(src='http://bizof.me/3rd/js/jquery.js')
+    //- script(src='http://bizof.me/3rd/js/bootstrap.min.js')
+    //- script(src='http://bizof.me/3rd/js/bootstrap-datepicker.min.js')
+    //- script(src='http://bizof.me/3rd/js/bootstrap-multiselect.js')
+    //- script(src='http://bizof.me/3rd/js/bootstrap-switch.min.js')
+    //- script(src='http://bizof.me/3rd/js/jquery.mobile.custom.min.js')
+    //- script(src='http://bizof.me/3rd/js/jquery.tmpl.js', type='text/javascript', charset='utf-8')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js')
+  body
+    #uinfo.dropdown.headnav
+    #cont
+    .container#page-hook
+      .page.page__bd
+    #cont2(style='z-index:10000;text-align:center;width:100%;position:absolute;top:100px;display:none')
+      //- img(style='max-width: 10%;margin: 40% 0', src='./3rd/images/indicator.gif')
+    script.
+      // this block is for UI developer
+      let searchParams = new URLSearchParams(window.location.search)
+      let page = searchParams.get('page')
+      console.log('page ' + page)
+      // get page template source
+      fetch(`/${page}/template.html`).then((response)=> {
+        return response.text()
+      }).then((source) => {
+        var template = Handlebars.compile(source)
+        var html = template({name: 'handle'})
+        document.querySelector('#page-hook').innerHTML = html
+      })
+      

@@ -1,0 +1,7 @@
+<ul class="list-group">
+{%each(i,obj) data%}
+<li class="list-group-item" style="font-size:9pt">
+  <img src="${obj.filename}" style="width:2em" /><span><a href="#${tiletid}-${obj.id}-0">${obj.title}</a></span><br /><span>${obj.summary}</span>
+</li>
+{%/each%}
+</ul>
