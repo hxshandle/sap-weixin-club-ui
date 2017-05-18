@@ -1,29 +1,41 @@
-<ul class="activity-list">
-  {{#each data}}
-  <li class="item">
-    <div class="active-item">
-      <div class="image-outer">
-        <img src="{{filename}}" alt="" class="band">
-      </div>
-      <div class="info">
-        <div class="title-1">{{ title }}</div>
-        <div class="sub-info">
-          <i class="fa fa-user-o"></i>
-          <span class="count">{{ usercnt }}</span>
+<div class="weui-tab">
+  <div class="weui-navbar">
+    <div onclick="goto()" class="weui-navbar__item"><i class="fa fa-home fa-2x fa-fw"></i></div>
+    <div onclick="goto()" class="weui-navbar__item weui-bar__item_on"><i class="fa fa-calendar fa-2x fa-fw"></i></div>
+    <div onclick="goto()" class="weui-navbar__item"><i class="fa fa-users fa-2x fa-fw"></i></div>
+  </div>
+  <div class="weui-tab__panel">
+    <!--main page-->
+    <ul class="activity-list">
+      {{#each data}}
+      <li class="item">
+        <div class="active-item">
+          <div class="image-outer">
+            <img src="{{filename}}" alt="" class="band">
+          </div>
+          <div class="info">
+            <div class="title-1">{{ title }}</div>
+            <div class="sub-info">
+              <i class="fa fa-user-o"></i>
+              <span class="count">{{ usercnt }}</span>
+            </div>
+            <div class="sub-info">
+              <i class="fa fa-clock-o"></i>
+              <span class="count">{{ lastupdate }}</span>
+            </div>
+            <div class="sub-info">
+              <i class="fa fa-map-marker"></i>
+              <span class="address">{{ clubname }}</span>
+            </div>
+          </div>
         </div>
-        <div class="sub-info">
-          <i class="fa fa-clock-o"></i>
-          <span class="count">{{ lastupdate }}</span>
-        </div>
-        <div class="sub-info">
-          <i class="fa fa-map-marker"></i>
-          <span class="address">{{ clubname }}</span>
-        </div>
-      </div>
-    </div>
-  </li>
-  {{/each}}
-</ul>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>
+
+
 
 <style>
 

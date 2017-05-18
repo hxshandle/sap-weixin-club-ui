@@ -5,7 +5,7 @@ var watch = require('gulp-watch')
 var gulpCopy = require('gulp-copy')
 
 gulp.task('html', function () {
-  return watch('src/base.pug', {
+  return watch('src/**/*.pug', {
       ignoreInitial: false,
     })
     .pipe(pug())

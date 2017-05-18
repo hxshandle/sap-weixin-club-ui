@@ -6,13 +6,20 @@ html
     link(rel='stylesheet', href='https://res.wx.qq.com/open/libs/weui/1.1.2/weui.min.css')
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.8/handlebars.min.js')
+    include app.css.pug
   body
-    #uinfo.dropdown.headnav
-    #cont
-    .container#page-hook
-      .page.page__bd
-    #cont2(style='z-index:10000;text-align:center;width:100%;position:absolute;top:100px;display:none')
-      //- img(style='max-width: 10%;margin: 40% 0', src='./3rd/images/indicator.gif')
+    #page-hook
+    script.
+      function goto () {
+        alert('Hi mike please talk to handle for more...')
+      }
+
+      function activeNavItem (number) {
+        document.querySelectorAll('.weui-navbar__item').each(el => {
+          el.classList.remove('weui-bar__item_on')
+        })
+        document.querySelectorAll('.weui-navbar__item')[number].classList.add('weui-bar__item_on')
+      }
     script.
       // this block is for UI developer
       let searchParams = new URLSearchParams(window.location.search)

@@ -1,0 +1,160 @@
+<div class="weui-tab">
+  <div class="weui-navbar">
+    <div onclick="goto()" class="weui-navbar__item weui-bar__item_on"><i class="fa fa-home fa-2x fa-fw"></i></div>
+    <div onclick="goto()" class="weui-navbar__item"><i class="fa fa-calendar fa-2x fa-fw"></i></div>
+    <div onclick="goto()" class="weui-navbar__item"><i class="fa fa-users fa-2x fa-fw"></i></div>
+  </div>
+  <div class="weui-tab__panel">
+    <!--main page-->
+    <!--start header-->
+    <div class="header-container">
+      <img src="https://unsplash.it/720/400/?random" alt="" class="header-image">
+      <div class="header">
+        <h1 class="main-heading">Hugh Jackman</h1>
+        <span class="tag main_tag">SF</span>
+        <span class="tag">PingPang</span>
+        <span class="tag">PingPang</span>
+        <span class="tag">PingPang</span>
+        <span class="tag">PingPang</span>
+        <span class="tag">PingPang</span>
+        <span class="tag">Bike</span>
+        <div class="stats">
+          <span class="stat-module">
+            Movies <span class="stat-number">56</span>
+          </span>
+          <span class="stat-module">
+            Plays <span class="stat-number">29</span>
+          </span>
+          <span class="stat-module">
+            Musicals <span class="stat-number">11</span>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="overlay-header"></div>
+    <!--end header-->
+    <div class="body">
+      <img src="https://s17.postimg.org/xcbukrwdr/Hugh_Jackman_f.jpg" alt="Hugh Jackman" class="body-image">
+      <span class="body-stats">Followers <span>3.5k</span></span>
+      <span class="body-stats">Followers <span>3.5k</span></span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .header-container {
+    position: relative;
+  }
+
+  .header-image {
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    height: auto;
+    -webkit-animation: zoomEffect 35s infinite;
+    animation: zoomEffect 35s infinite;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  .header-container .header {
+    color: #fff;
+    padding: 15px;
+    height: 300px;
+  }
+
+  .main-heading {
+    color: #fff;  
+    font-size: 26px;
+    font-weight: 300;
+    margin-bottom: 12px;
+    margin-top: 36px;
+  }
+
+  .tag {
+    background-color: rgba(255, 255, 255, .35);
+    border-radius: 20px;
+    font-size: 11px;
+    margin-right: 8px;
+    padding: 4px 10px;
+    text-transform: uppercase;
+  }
+
+  .stats {
+    margin-top: 35px;
+  }
+
+  .stat-module {
+    display: inline-block;
+    font-size: 12px;
+    margin-right: 20px;
+    text-transform: uppercase;
+  }
+
+  .stat-number {
+    display: inline-block;
+    font-weight: 600;
+    margin-left: 4px;
+  }
+
+  .overlay-header {
+    background-color: #eee;
+    height: 100px;
+    margin: -50px 0 0 -25%;
+    transform: rotate(-10deg);
+    width: 150%;
+    z-index: 0;
+  }
+
+  @keyframes zoomEffect {
+    0% {
+      -webkit-transform: scale(1) translateX(0) translateY(0);
+              transform: scale(1) translateX(0) translateY(0);
+    }
+    100% {
+      -webkit-transform: scale(1.2) translateX(-200px) translateY(-80px);
+              transform: scale(1.2) translateX(-200px) translateY(-80px);
+    }
+  }
+
+  .body {
+    background-color: #eee;
+    color: #555;
+    margin-top: -50px;
+    padding: 0 15px 15px;
+    position: relative;
+    min-height: 375px;
+  }
+
+  .body-image {
+    border-radius: 100%;
+    box-shadow: 5px 10px 75px rgba(0, 0, 0, .4);
+    float: left;
+    margin: -90px 0 20px;
+    position: relative;
+    z-index: 2;
+    }
+
+  .body-stats {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    float: left;
+    margin: -14px 0  0 30px;
+    position: relative;
+    text-transform: uppercase;
+    width: 20%;
+    }
+
+  .body-stats > span {
+    display: inline-block;
+    font-weight: 900;
+  }
+
+
+</style>
