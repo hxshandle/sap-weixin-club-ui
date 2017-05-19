@@ -37,11 +37,68 @@
       <img src="https://s17.postimg.org/xcbukrwdr/Hugh_Jackman_f.jpg" alt="Hugh Jackman" class="body-image">
       <span class="body-stats">Followers <span>3.5k</span></span>
       <span class="body-stats">Followers <span>3.5k</span></span>
+      <div class="clear-both"></div>
+      <!--events list-->
+      <div class="activities">
+
+        <div class="activity">
+          <div class="left-cnt">
+            <span class="time-1">7</span>
+            <span class="time-2">Thu</span>
+          </div>
+          <div class="right-cnt">
+            <div class="event-name">这里是活动</div>
+            <div class="event-st">
+              <i class="fa fa-clock-o"></i>
+              <span>16:01:35</span>
+              </div>
+          </div>
+        </div>
+
+        <div class="activity">
+          <div class="left-cnt">
+            <span class="time-1">7</span>
+            <span class="time-2">Thu</span>
+          </div>
+          <div class="right-cnt">
+            <div class="event-name">这里是活动</div>
+            <div class="event-st">
+              <i class="fa fa-clock-o"></i>
+              <span>16:01:35</span>
+              </div>
+          </div>
+        </div>
+
+      </div>
+      <!--album-->
+      <div class="albums">
+        <div class="album">
+          <img src="https://unsplash.it/1000/400/?random" alt="">
+        </div>
+        <div class="album">
+          <img src="https://unsplash.it/600/500/?random" alt="">
+        </div>
+        <div class="album">
+          <img src="https://unsplash.it/600/400/?random" alt="">
+        </div>
+        <div class="album">
+          <img src="https://unsplash.it/900/800/?random" alt="">
+        </div>
+        <div class="album">
+          <img src="https://unsplash.it/300/400/?random" alt="">
+        </div>
+        <div class="album">
+          <img src="https://unsplash.it/1024/768/?random" alt="">
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <style>
+  .clear-both {
+    clear: both;
+  }
   .header-container {
     position: relative;
   }
@@ -103,7 +160,7 @@
   }
 
   .overlay-header {
-    background-color: #eee;
+    background-color: #fff;
     height: 100px;
     margin: -50px 0 0 -25%;
     transform: rotate(-10deg);
@@ -123,7 +180,7 @@
   }
 
   .body {
-    background-color: #eee;
+    background-color: #fff;
     color: #555;
     margin-top: -50px;
     padding: 0 15px 15px;
@@ -154,6 +211,69 @@
   .body-stats > span {
     display: inline-block;
     font-weight: 900;
+  }
+  .activities .activity{
+    display: flex;
+    box-shadow: 2px 2px 2px #f1f1f1;
+    height: 60px;
+    border: 1px solid #f1f1f1;
+    margin: 1rem 0;
+  }
+  .activities .activity .left-cnt {
+    flex: 1;
+  }
+  .time-1, .time-2 {
+    height: 50%;
+    line-height: 30px;
+    text-align: center;
+    display: block;
+  }
+  .time-2 {
+    font-weight: 800;
+    color: #fff;
+    background: #4682b4;
+  }
+  .activities .activity .right-cnt {
+    flex: 4;
+    padding: 0.5rem;
+    border-left: 1px solid #eee;
+    position: relative
+  }
+
+  .event-name {
+    font-weight: 600;
+  }
+  .event-st {
+    font-size: 0.75rem;
+    position: absolute;
+    bottom: 0;
+    left: 0.5rem;
+  }
+
+  .albums {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 2rem;
+  }
+
+  .album {
+    width: 32%;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    margin: 8px 0;
+  }
+
+  .album img{
+    max-width:100%;
+    max-height:100%;
+    position:absolute;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+    margin:auto;
   }
 
 
