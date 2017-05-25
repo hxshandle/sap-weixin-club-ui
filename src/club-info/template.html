@@ -10,30 +10,78 @@
       <img src="https://unsplash.it/720/400/?random" alt="" class="header-image"/>
       <div class="header">
         <h1 class="main-heading">俱乐部名称</h1>
+
+        <div class="club-actions">
+          <button class="join" onclick="goto()">加入</button>
+          <button class="exit" onclick="goto()">退出</button>
+          <button class="change" onclick="goto()">变更</button>
+        </div>
       </div>
     </div>
     <div class="body">
       <!--album-->
-      <div class="albums">
-        <div class="album">
-          <img src="https://unsplash.it/1000/400/?random" alt="">
-        </div>
-        <div class="album">
-          <img src="https://unsplash.it/600/500/?random" alt="">
-        </div>
-        <div class="album">
-          <img src="https://unsplash.it/600/400/?random" alt="">
-        </div>
-        <div class="album">
-          <img src="https://unsplash.it/900/800/?random" alt="">
-        </div>
-        <div class="album">
-          <img src="https://unsplash.it/300/400/?random" alt="">
-        </div>
-        <div class="album">
-          <img src="https://unsplash.it/1024/768/?random" alt="">
+      <h2> Album</h2>
+      <div class="panel-albums panel">
+        <div class="albums">
+          <div class="album">
+            <img src="https://unsplash.it/1000/400/?random" alt="">
+          </div>
+          <div class="album">
+            <img src="https://unsplash.it/600/500/?random" alt="">
+          </div>
+          <div class="album">
+            <img src="https://unsplash.it/600/400/?random" alt="">
+          </div>
+          <div class="album">
+            <img src="https://unsplash.it/900/800/?random" alt="">
+          </div>
+          <div class="album">
+            <img src="https://unsplash.it/300/400/?random" alt="">
+          </div>
+          <div class="album">
+            <img src="https://unsplash.it/1024/768/?random" alt="">
+          </div>
         </div>
       </div>
+      
+      <h2>Users</h2>
+      <div class="panel-members panel">
+        <ul class="team-member-lists">
+          <li class="user_item">
+            <a href="#">
+              <img src="https://randomuser.me/api/portraits/women/36.jpg" alt="">
+              <div class="user__name">name bbb</div>
+            </a>
+          </li>
+
+          <li class="user_item">
+            <a href="#">
+              <img src="https://randomuser.me/api/portraits/women/36.jpg" alt="">
+              <div class="user__name">name bbbssdfd sdfdsfsd fdsfdsfsd</div>
+            </a>
+          </li>
+          <li class="user_item">
+            <a href="#">
+              <img src="https://randomuser.me/api/portraits/women/36.jpg" alt="">
+              <div class="user__name">name bbb</div>
+            </a>
+          </li>
+          <li class="user_item">
+            <a href="#">
+              <img src="https://randomuser.me/api/portraits/women/36.jpg" alt="">
+              <div class="user__name">name bbb</div>
+            </a>
+          </li>
+          <li class="user_item">
+            <a href="#">
+              <img src="https://randomuser.me/api/portraits/women/36.jpg" alt="">
+              <div class="user__name">name bbb</div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+
     </div>
   </div>
 </div>
@@ -258,4 +306,51 @@ body {
     left:0;
     margin:auto;
   }
+
+  .team-member-lists {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+  }
+  .team-member-lists .user_item {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    list-style-type: none;
+    text-transform: capitalize;
+    display: inline-block;
+    width: 25%;
+    padding: 20px 10px;
+    box-sizing: border-box;
+  }
+
+  .user_item img {
+    width: 100%;
+    border-radius: 5px;
+  }
+  .user_item span {
+    display: block;
+  }
+  .user_item a {
+    display: block;
+    justify-content: space-around;
+  }
+  .user__name {
+    color: #444;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .club-actions button {
+    padding: 0.25rem 0.5rem;
+    margin-right: 1rem;
+    background: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    border: 0px;
+    border-radius: 3px;
+  }
+
 </style>
