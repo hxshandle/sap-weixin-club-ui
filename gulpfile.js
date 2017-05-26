@@ -3,6 +3,7 @@ var sass = require('gulp-sass')
 var pug = require('gulp-pug')
 var watch = require('gulp-watch')
 var gulpCopy = require('gulp-copy')
+var fileinclude = require('gulp-file-include')
 
 gulp.task('html', function () {
   return watch('src/**/*.pug', {
@@ -12,12 +13,18 @@ gulp.task('html', function () {
     .pipe(gulp.dest('build/html'))
 })
 
+
 gulp.task('copy-template', function () {
   return watch('src/**/*.html', {
       ignoreInitial: false
     })
+    .pipe(fileinclude({
+      prefix: '@@',
+      basepath: '@file'
+    }))
     .pipe(gulp.dest('build/html'))
 })
+
 
 gulp.task('copy-data', function () {
   return watch('origin/**/data.js', {
@@ -25,6 +32,7 @@ gulp.task('copy-data', function () {
     })
     .pipe(gulp.dest('build/html'))
 })
+
 
 
 gulp.task('default', ['html', 'copy-template', 'copy-data'])
