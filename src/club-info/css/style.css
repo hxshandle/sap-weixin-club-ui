@@ -270,3 +270,9 @@
     border: 0px;
     border-radius: 3px;
   }
+
+  a.add-item {
+    float: right;
+    color: #4682b4;
+    text-decoration: none;
+  }

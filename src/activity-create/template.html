@@ -1,0 +1,109 @@
+<h2>创建活动</h2>
+
+<div class="weui-cells__title">所属俱乐部</div>
+<div class="weui-cells">
+  <div class="weui-cell weui-cell_select">
+    <div class="weui-cell__bd">
+      <select class="weui-select" name="clubSelector">
+          <option selected="" value="1">俱乐部1</option>
+          <option value="2">俱乐部2</option>
+          <option value="3">俱乐部3</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="weui-cells__title">活动名称</div>
+<div class="weui-cells">
+  <div class="weui-cell">
+    <div class="weui-cell__bd">
+      <input class="weui-input" type="text" id="name" name="name" placeholder="请输入...">
+    </div>
+  </div>
+</div>
+
+<div class="weui-cells__title">活动地点</div>
+<div class="weui-cells">
+  <div class="weui-cell">
+    <div class="weui-cell__bd">
+      <textarea class="weui-textarea" placeholder="请输入..." rows="3"></textarea>
+    </div>
+  </div>
+</div>
+
+<div class="weui-cells__title">开始日期</div>
+<div class="weui-cells">
+  <div class="weui-cell">
+    <div class="weui-cell__bd">
+      <input class="weui-input" name="startAt" type="datetime-local" value="" placeholder="">
+    </div>
+  </div>
+</div>
+
+<div class="weui-cells__title">结束日期</div>
+<div class="weui-cells">
+  <div class="weui-cell">
+    <div class="weui-cell__bd">
+      <input class="weui-input" name="endAt" type="datetime-local" value="" placeholder="">
+    </div>
+  </div>
+</div>
+
+<div class="weui-cells__title">开放信息</div>
+<div class="weui-cell weui-cell_switch">
+  <div class="weui-cell__bd">仅对成员开放</div>
+  <div class="weui-cell__ft">
+    <label for="switchCP" class="weui-switch-cp">
+      <input id="switchCP" class="weui-switch-cp__input" type="checkbox" checked="checked">
+      <div class="weui-switch-cp__box"></div>
+    </label>
+  </div>
+</div>
+<div class="weui-cells__title">活动介绍</div>
+<div class="weui-cells weui-cells_form">
+  <div class="weui-cell">
+    <div class="weui-cell__bd">
+      <textarea class="weui-textarea" placeholder="请输入..." rows="3"></textarea>
+    </div>
+  </div>
+</div>
+
+
+<div class="buttons">
+  <a href="javascript:;" class="weui-btn weui-btn weui-btn_default">取消</a>
+  <a href="javascript:;" class="weui-btn weui-btn_primary">创建</a>
+</div>
+
+<style>
+  h2 {
+    padding: 20px 15px;
+  }
+
+  .buttons {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    padding: 0 15px;
+    box-sizing: border-box;
+    bottom: 15px;
+  }
+
+  .buttons a {
+    flex: 1;
+  }
+
+  .weui-btn+.weui-btn {
+    margin-top: 0px;
+  }
+
+  .buttons a:first-child {
+    margin-right: 0.5rem;
+  }
+
+  .buttons a:last-child {
+    margin-left: 0.5rem;
+  }
+  #page-hook {
+    margin-bottom: 100px;
+  }
+</style>

@@ -7,7 +7,10 @@
   <div class="weui-tab__panel">
     @@include('../club-info/_club_header.html')
     <div class="body">
-      <h2>Activities</h2>
+      <h2>
+        Activities
+        <a class="add-item" href="javascript:void(alert('move to create page'))"><i class="fa fa-plus"></i></a>
+      </h2>
       <ul class="activity-list">
       {{#each data}}
       <li class="item">
